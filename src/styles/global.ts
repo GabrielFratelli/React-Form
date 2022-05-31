@@ -11,8 +11,8 @@ export const GlobalStyles = createGlobalStyle`
 }
 
 body {
-  width: 100vw;
-  height: 100vh;
+  /* width: 100vw;
+  height: 100vh; */
 
   font-family: 'Lato', sans-serif;
   color: var(--white);

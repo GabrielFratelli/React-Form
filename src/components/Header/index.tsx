@@ -6,7 +6,7 @@ import { HeaderContainer } from "./styles";
 export const Header = () => {
   return (
     <HeaderContainer>
-      <strong>Please, Fill this form!</strong>
+      <strong>Make your first registration</strong>
     </HeaderContainer>
   );
 };
