@@ -9,8 +9,8 @@ export const Container = styled.div`
     display: flex;
     align-items: center;
     flex-direction: column;
-    font-size: 2rem;
-    padding-top: 2.5rem;
+    font-size: 1.5rem;
+    padding-top: 1.5rem;
 
     gap: 2rem;
 
@@ -53,8 +53,6 @@ export const ButtonContainer = styled.button`
   background-color: var(--black);
   box-shadow: 0 0 0.5rem var(--opaco);
   border: none;
-
-  margin-top: 0.5rem;
 
   transition: filter 0.2s;
 
