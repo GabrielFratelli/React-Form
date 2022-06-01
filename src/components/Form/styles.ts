@@ -10,15 +10,23 @@ export const Container = styled.div`
     align-items: center;
     flex-direction: column;
 
-    gap: 20px;
+    gap: 10px;
 
     input {
+      height: 25px;
+      width: 250px;
+
       display: flex;
       align-items: center;
 
       &::placeholder {
         font-size: 10px;
       }
+    }
+
+    span {
+      font-size: 0.5rem;
+      color: var(--red);
     }
   }
 `;
@@ -29,7 +37,7 @@ export const HeaderContainer = styled.header`
   justify-content: center;
 
   font-size: 1.5rem;
-  padding: 1rem;
+  padding: 1.5rem;
 `;
 
 export const ButtonContainer = styled.button`
@@ -40,6 +48,9 @@ export const ButtonContainer = styled.button`
   background-color: var(--black);
   box-shadow: 0 0 0.5rem var(--opaco);
   border: none;
+
+  margin-top: 20px;
+
   transition: filter 0.2s;
 
   &:hover {
