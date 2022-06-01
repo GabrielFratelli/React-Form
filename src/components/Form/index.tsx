@@ -1,5 +1,8 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+
 import Logo from "../../Assets/form_logo.png";
 
 import { Container, HeaderContainer, ButtonContainer } from "./styles";
@@ -9,7 +12,21 @@ type Inputs = {
   email: string;
   contact: string;
   password: string;
+  confirmPassword: string;
 };
+
+const schema = yup
+  .object({
+    name: yup.string().required(),
+    email: yup.string().email().required(),
+    contact: yup.string().required(),
+    password: yup.string().min(6).required(),
+    confirmPassword: yup
+      .string()
+      .required()
+      .oneOf([yup.ref("password")]),
+  })
+  .required();
 
 export const Form = () => {
   const {
@@ -17,11 +34,15 @@ export const Form = () => {
     handleSubmit,
     watch,
     formState: { errors },
-  } = useForm<Inputs>();
+  } = useForm<Inputs>({
+    resolver: yupResolver(schema),
+  });
 
-  function onSubmit(userData: any) {
+  function onSubmit(userData: Inputs) {
     console.log(userData);
   }
+
+  console.log(errors);
 
   return (
     <>
@@ -60,6 +81,14 @@ export const Form = () => {
             <input
               placeholder=" digite sua senha"
               {...register("password", { required: true })}
+            />
+            {errors.password && <span>Este campo é obrigatório</span>}
+          </label>
+          <label>
+            Confirmar Senha:
+            <input
+              placeholder=" confirme sua senha"
+              {...register("confirmPassword", { required: true })}
             />
             {errors.password && <span>Este campo é obrigatório</span>}
           </label>
