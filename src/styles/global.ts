@@ -8,17 +8,16 @@ export const GlobalStyles = createGlobalStyle`
   box-sizing: border-box;
 
   max-width: 1920px;
+  font-family: 'Lato', sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
 body {
-  /* width: 100vw;
-  height: 100vh; */
+  width: 100vw;
+  height: 100vh;
 
-  font-family: 'Lato', sans-serif;
   color: var(--white);
   background: var(--background);
-
-  -webkit-font-smoothing: antialiased;
 }
 
 button, input, select, option {

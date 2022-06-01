@@ -1,38 +1,35 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 
-import { Container } from "./styles";
+import { Container, HeaderContainer, ButtonContainer } from "./styles";
 
 export const Form = () => {
   return (
-    <Container>
-      <form action="#">
-        <label>
-          Name:
-          <input />
-        </label>
-        <label>
-          E-mail:
-          <input />
-        </label>
-        <label>
-          Genre:
-          <select>
-            <option value="empty"></option>
-            <option value="Masculine">Masculine</option>
-            <option value="Feminine">Feminine</option>
-            <option value="Others">Others</option>
-          </select>
-        </label>
-        <label>
-          Password:
-          <input />
-        </label>
-        <label>
-          Confirm Password:
-          <input />
-        </label>
-      </form>
-    </Container>
+    <>
+      <HeaderContainer>
+        <strong>Preencha suas informações:</strong>
+      </HeaderContainer>
+      <Container>
+        <form action="#">
+          <label>
+            Nome:
+            <input placeholder=" digite seu nome" />
+          </label>
+          <label>
+            E-mail:
+            <input placeholder=" exemplo@exemplo.com" />
+          </label>
+          <label>
+            Senha:
+            <input placeholder=" digite sua senha" />
+          </label>
+          <label>
+            Confirmar Senha:
+            <input placeholder=" confirme senha" />
+          </label>
+          <ButtonContainer type="submit">Enviar</ButtonContainer>
+        </form>
+      </Container>
+    </>
   );
 };
