@@ -9,23 +9,21 @@ export const Container = styled.div`
     display: flex;
     align-items: center;
     flex-direction: column;
+    font-size: 2rem;
+    padding-top: 40px;
 
     gap: 10px;
 
     input {
-      height: 25px;
-      width: 250px;
+      height: 50px;
+      width: 400px;
 
       display: flex;
       align-items: center;
-
-      &::placeholder {
-        font-size: 10px;
-      }
     }
 
     span {
-      font-size: 0.5rem;
+      font-size: 1rem;
       color: var(--red);
     }
   }
@@ -35,14 +33,21 @@ export const HeaderContainer = styled.header`
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 
-  font-size: 1.5rem;
-  padding: 1.5rem;
+  font-size: 3rem;
+
+  img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 350px;
+  }
 `;
 
 export const ButtonContainer = styled.button`
-  height: 20px;
-  width: 100px;
+  height: 50px;
+  width: 200px;
   font-weight: 400;
   color: var(--opaco);
   background-color: var(--black);

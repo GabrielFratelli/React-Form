@@ -1,5 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import Logo from "../../Assets/form_logo.png";
 
 import { Container, HeaderContainer, ButtonContainer } from "./styles";
 
@@ -25,6 +26,7 @@ export const Form = () => {
   return (
     <>
       <HeaderContainer>
+        <img src={Logo} alt="logo Form" />
         <strong>Preencha suas informações:</strong>
       </HeaderContainer>
       <Container>
