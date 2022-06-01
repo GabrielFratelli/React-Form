@@ -10,21 +10,27 @@ import { Container, HeaderContainer, ButtonContainer } from "./styles";
 type Inputs = {
   name: string;
   email: string;
-  contact: string;
   password: string;
   confirmPassword: string;
 };
 
 const schema = yup
   .object({
-    name: yup.string().required(),
-    email: yup.string().email().required(),
-    contact: yup.string().required(),
-    password: yup.string().min(6).required(),
+    name: yup
+    .string()
+    .required("Este campo é obrigatório"),
+    email: yup
+      .string()
+      .email("Digite um email válido")
+      .required("Este campo é obrigatório"),
+    password: yup
+      .string()
+      .min(6, "A senha deve ter no mínimo 6 caracteres")
+      .required("Este campo é obrigatório"),
     confirmPassword: yup
       .string()
-      .required()
-      .oneOf([yup.ref("password")]),
+      .required("Este campo é obrigatório")
+      .oneOf([yup.ref("password")], "As senhas devem coincidir"),
   })
   .required();
 
@@ -38,11 +44,7 @@ export const Form = () => {
     resolver: yupResolver(schema),
   });
 
-  function onSubmit(userData: Inputs) {
-    console.log(userData);
-  }
-
-  console.log(errors);
+  function onSubmit(userData: Inputs) {}
 
   return (
     <>
@@ -55,42 +57,38 @@ export const Form = () => {
           <label>
             Nome:
             <input
+              type="text"
               placeholder=" digite seu nome"
               {...register("name", { required: true })}
             />
-            {errors.name && <span>Este campo é obrigatório</span>}
+            {errors.name && <p>{errors.name?.message}</p>}
           </label>
           <label>
-            E-mail:
+            Email:
             <input
-              placeholder=" exemplo@exemplo.com"
+              type="text"
+              placeholder=" exemplo@mail.com"
               {...register("email", { required: true })}
             />
-            {errors.email && <span>Este campo é obrigatório</span>}
-          </label>
-          <label>
-            Contato:
-            <input
-              placeholder=" 91234-5678"
-              {...register("contact", { required: true })}
-            />
-            {errors.contact && <span>Este campo é obrigatório</span>}
+            {errors.email && <p>{errors.email?.message}</p>}
           </label>
           <label>
             Senha:
             <input
+              type="password"
               placeholder=" digite sua senha"
               {...register("password", { required: true })}
             />
-            {errors.password && <span>Este campo é obrigatório</span>}
+            {errors.password && <p>{errors.password?.message}</p>}
           </label>
           <label>
             Confirmar Senha:
             <input
+              type="password"
               placeholder=" confirme sua senha"
               {...register("confirmPassword", { required: true })}
             />
-            {errors.password && <span>Este campo é obrigatório</span>}
+            {errors.confirmPassword && <p>{errors.confirmPassword?.message}</p>}
           </label>
           <ButtonContainer type="submit">Enviar</ButtonContainer>
         </form>

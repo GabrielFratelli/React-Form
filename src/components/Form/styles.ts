@@ -10,19 +10,19 @@ export const Container = styled.div`
     align-items: center;
     flex-direction: column;
     font-size: 2rem;
-    padding-top: 40px;
+    padding-top: 2.5rem;
 
-    gap: 10px;
+    gap: 2rem;
 
     input {
-      height: 50px;
-      width: 400px;
+      height: 3.5rem;
+      width: 25rem;
 
       display: flex;
       align-items: center;
     }
 
-    span {
+    p {
       font-size: 1rem;
       color: var(--red);
     }
@@ -41,20 +41,20 @@ export const HeaderContainer = styled.header`
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 350px;
+    width: 21.5rem;
   }
 `;
 
 export const ButtonContainer = styled.button`
-  height: 50px;
-  width: 200px;
+  height: 3rem;
+  width: 12rem;
   font-weight: 400;
   color: var(--opaco);
   background-color: var(--black);
   box-shadow: 0 0 0.5rem var(--opaco);
   border: none;
 
-  margin-top: 20px;
+  margin-top: 0.5rem;
 
   transition: filter 0.2s;
 

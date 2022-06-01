@@ -24,8 +24,6 @@ button, input, select, option {
 cursor: pointer;
 }
 
-
-
 :root {
   --background: #041E42;
   --white: #fff;
@@ -33,5 +31,4 @@ cursor: pointer;
   --red: #8b0000;
   --opaco: #f8f8ff;
 }
-
 `;
